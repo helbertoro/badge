@@ -43,10 +43,29 @@ class Form extends Component {
 
   render() {
     return (
-      <div className="row justify-content-md-center">
+      <div className="row">
+        <div className="col-5">
+          <div className="carneContainer">
+            <div className="carneContainer__name">{this.state.name}</div>
+            <div className="carneContainer__id">
+              <span className="carneContainer__id--type">
+                {this.state.type_identification ?
+                  `${this.state.type_identification}: ${this.state.identification}` : ''
+                }
+              </span>
+              <span className="carneContainer__id--rh">
+                {this.state.rh ?
+                  `RH: ${this.state.rh}` : ''
+                }
+              </span>
+            </div>
+            <div className="carneContainer__date">
+              Vence: 31/02/2020
+            </div>
+          </div>
+        </div>
         <div className="col-7">
           <form onSubmit={this.handleSubmit}>
-          <h2>{this.state.name}</h2>
             <div className="form-row">
               {FormInputs.inputs.map((item, id) => (
   

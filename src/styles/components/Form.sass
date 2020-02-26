@@ -1,4 +1,46 @@
 @import "~bootstrap/scss/bootstrap"
-  
-h1
-  color: red
+
+@font-face
+  font-family: 'museo700'
+  src: url('../../assets/fonts/museo_700-webfont.woff2') format('woff2'), url('../../assets/fonts/museo_700-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'museo_sans_condensed700'
+  src: url('../../assets/fonts/museosanscondensed-700-webfont.woff2') format('woff2'), url('../../assets/fonts/museosanscondensed-700-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+
+.carneContainer
+  width: 320px
+  height: 522px
+  margin: 0 auto
+  position: relative
+  background-image: url('../../assets/images/carne.jpg')
+  background-size: contain
+  color: #2a8ca5
+  font-family: 'museo_sans_condensed700'
+  text-transform: uppercase
+
+  &__name
+    position: absolute
+    width: 100%
+    bottom: 180px
+    text-align: center
+
+  &__id
+    position: absolute
+    width: 100%
+    bottom: 160px
+    text-align: center
+
+    &--type
+      margin-right: 15px
+
+  &__date
+    position: absolute
+    bottom: 31px
+    left: 50%
+    transform: translateX(-75%)
+    font-size: 11px
