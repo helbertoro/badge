@@ -36,7 +36,7 @@ const FormInputs = {
     {
       label: 'Número de identificación',
       name: 'identification',
-      type: 'text',
+      type: 'number',
       options: {},
       size: '8',
       helper: ''

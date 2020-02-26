@@ -3,7 +3,6 @@ import '../styles/components/Form.sass'
 import FormInputs from '../utils/FormInputs.js'
 
 class Form extends Component {
-
   constructor(props) {
     super(props)
     this.state = {}
@@ -20,10 +19,6 @@ class Form extends Component {
     ))
 
     this.setState(formItem)
-
-    setTimeout(() => {
-      console.log(this.state)
-    }, 1000);
   }
 
   handleInputChange(event) {
@@ -38,7 +33,18 @@ class Form extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    console.log(event.target.value)
+    
+    for (const prop in this.state) {
+      if(!this.state[prop]) {
+        return alert('Todos los campos son obligatorios')
+      }
+    }
+
+    return this.handleFetchSubmit()
+  }
+
+  handleFetchSubmit() {
+    alert('llego hasta acá, Nice')
   }
 
   render() {
@@ -71,7 +77,7 @@ class Form extends Component {
   
                 item.type === 'select' ? (
                   <div key={id} className={`form-group col-${item.size}`}>
-                    <label htmlFor={item.name}>{item.label}</label>
+                    <label htmlFor={item.name}>{item.label}<span className="red">*</span></label>
                     <select className="form-control" name={item.name} id={item.name} onChange={this.handleInputChange}>
                       {item.options.map((opt, optId) => (
                         <option key={optId} name={opt.code}>{opt.code}</option>
@@ -81,7 +87,7 @@ class Form extends Component {
                   </div>
                 ) : (
                   <div key={id} className={`form-group col-${item.size}`}>
-                    <label htmlFor={item.name}>{item.label}</label>
+                    <label htmlFor={item.name}>{item.label}<span className="red">*</span></label>
                     <input type={item.type} className="form-control" id={item.name} name={item.name} onChange={this.handleInputChange} />
                     <small className="form-text text-muted">{item.helper}</small>
                   </div>
