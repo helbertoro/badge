@@ -44,7 +44,19 @@ class Form extends Component {
   }
 
   handleFetchSubmit() {
-    alert('llego hasta acá, Nice')
+    var url = 'http://contratistas.idcbis.org.co/api/carne';
+    var data = this.state;
+
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+    .then(res => console.log('Success:', res))
+    .catch(error => console.error('Error:', error));
+
   }
 
   render() {
