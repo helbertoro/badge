@@ -1,8 +1,8 @@
 import React from 'react'
-import Form from '../components/Form'
 import Logo from '../assets/images/logo.png'
+import '../styles/Thanks.sass'
 
-const Home = () => {
+const Thanks = () => {
   return (
     <div className="container">
       <div className="row">
@@ -10,9 +10,13 @@ const Home = () => {
           <img className="logo" src={Logo} alt="Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud - IDCBIS"/>
         </div>
       </div>
-      <Form />
+      <div className="row">
+        <div className="col mt-5 text-center">
+          <h1>Tus datos fueron registrados</h1>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default Home
+export default Thanks

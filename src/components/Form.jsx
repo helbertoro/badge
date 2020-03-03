@@ -41,26 +41,7 @@ class Form extends Component {
     }
 
     document.getElementById("carneForm").submit();
-
-    return 'ok';
-    /* return this.handleFetchSubmit() */
   }
-
-  /* handleFetchSubmit() {
-    var url = 'http://contratistas.idcbis.org.co/api/carne';
-    var data = this.state;
-
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    }).then(res => res.json())
-    .then(res => console.log('Success:', res))
-    .catch(error => console.error('Error:', error));
-
-  } */
 
   render() {
     return (
@@ -70,8 +51,8 @@ class Form extends Component {
             <div className="carneContainer__name">{this.state.name}</div>
             <div className="carneContainer__id">
               <span className="carneContainer__id--type">
-                {this.state.type_identification ?
-                  `${this.state.type_identification}: ${this.state.identification}` : ''
+                {this.state.typeIdentification ?
+                  `${this.state.typeIdentification}: ${this.state.identification}` : ''
                 }
               </span>
               <span className="carneContainer__id--rh">
@@ -81,12 +62,12 @@ class Form extends Component {
               </span>
             </div>
             <div className="carneContainer__date">
-              Vence: 31/02/2020
+              Vence: 31/12/2020
             </div>
           </div>
         </div>
         <div className="col-7">
-          <form action="http://contratistas.idcbis.org.co/api/carne" onSubmit={this.handleSubmit} id="carneForm" method="post" enctype="multipart/form-data">
+          <form action="http://contratistas.idcbis.org.co/api/carne" onSubmit={this.handleSubmit} id="carneForm" method="post" encType="multipart/form-data">
             <div className="form-row">
               {FormInputs.inputs.map((item, id) => (
   
@@ -102,9 +83,8 @@ class Form extends Component {
                   </div>
                 ) : (
                   <div key={id} className={`form-group col-${item.size}`}>
-                    <label htmlFor={item.name}>{item.label}<span className="red">*</span></label>
+                    <label htmlFor={item.name}>{item.label}<span className="red">*</span> <small className="form-text text-muted">{item.helper}</small></label>
                     <input type={item.type} className="form-control" id={item.name} name={item.name} onChange={this.handleInputChange} />
-                    <small className="form-text text-muted">{item.helper}</small>
                   </div>
                 )
   

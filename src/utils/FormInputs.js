@@ -42,11 +42,11 @@ const FormInputs = {
       helper: ''
     },
     {
-      label: 'RH',
+      label: 'Grupo sanguíneo y RH',
       name: 'rh',
       type: 'text',
       options: {},
-      size: '3',
+      size: '4',
       helper: ''
     },
     {
@@ -54,11 +54,11 @@ const FormInputs = {
       name: 'birthday',
       type: 'date',
       options: {},
-      size: '9',
+      size: '8',
       helper: ''
     },
     {
-      label: 'Dirección',
+      label: 'Dirección residencial',
       name: 'address',
       type: 'text',
       options: {},
