@@ -40,10 +40,13 @@ class Form extends Component {
       }
     }
 
-    return this.handleFetchSubmit()
+    document.getElementById("carneForm").submit();
+
+    return 'ok';
+    /* return this.handleFetchSubmit() */
   }
 
-  handleFetchSubmit() {
+  /* handleFetchSubmit() {
     var url = 'http://contratistas.idcbis.org.co/api/carne';
     var data = this.state;
 
@@ -57,7 +60,7 @@ class Form extends Component {
     .then(res => console.log('Success:', res))
     .catch(error => console.error('Error:', error));
 
-  }
+  } */
 
   render() {
     return (
@@ -83,7 +86,7 @@ class Form extends Component {
           </div>
         </div>
         <div className="col-7">
-          <form onSubmit={this.handleSubmit}>
+          <form action="http://contratistas.idcbis.org.co/api/carne" onSubmit={this.handleSubmit} id="carneForm" method="post" enctype="multipart/form-data">
             <div className="form-row">
               {FormInputs.inputs.map((item, id) => (
   
@@ -107,7 +110,7 @@ class Form extends Component {
   
               ))}
   
-              <button className="btn btn-success" type="submit">Enviar</button>
+              <button className="btn btn-info" type="submit">Enviar</button>
             </div>
           </form>
         </div>

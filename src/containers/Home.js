@@ -1,8 +1,8 @@
 import React from 'react'
-import Form from './Form'
-import '../styles/App.sass'
+import Form from '../components/Form'
+import '../styles/Home.sass'
 
-const App = () => {
+const Home = () => {
   return (
     <div className="container">
       <div className="row">
@@ -15,4 +15,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Home

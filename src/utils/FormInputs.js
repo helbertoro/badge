@@ -10,7 +10,7 @@ const FormInputs = {
     },
     {
       label: 'Tipo de identificación',
-      name: 'type_identification',
+      name: 'typeIdentification',
       type: 'select',
       options: [
         {
@@ -91,7 +91,7 @@ const FormInputs = {
     },
     {
       label: 'Grupo de trabajo',
-      name: 'workgroup',
+      name: 'workGroup',
       type: 'text',
       options: {},
       size: '6',
@@ -103,7 +103,7 @@ const FormInputs = {
       type: 'file',
       options: {},
       size: '12',
-      helper: 'Fondo blanco, solo rostro'
+      helper: 'Fondo blanco, solo rostro como el carné de ejemplo.'
     },
   ]
 }
